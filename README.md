@@ -21,7 +21,7 @@ Allow more language models to function call via an JSON Agent API wrapper
       4. Enable Allow credentials
    3. Go to configuration/Environment variables -> Set your API Keys and set the "SERVICE_API_KEY" to what you want your API key to be
    4. Go to configuration/Environment variables -> Set your "OPENROUTER_API_KEY"
-4. Copy the python code to your functions lambda_function.py
+4. Copy the python code to your functions lambda_function.py & copy the api_wrapper.md file next to your python function
 5. Install dependencies on AWS Lambda function
    1. Open a Linux Terminal (Under WSL or native)
    2. Create a folder `mkdir python`
