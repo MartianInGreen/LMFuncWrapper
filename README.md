@@ -1,6 +1,9 @@
 # LMFuncWrapper
 Allow more language models to function call via an JSON Agent API wrapper 
 
+**Example with Claude 3 Sonnet**
+![Demonstration Video](https://github.com/MartianInGreen/LMFuncWrapper/assets/24570687/e9802a36-8d7c-4372-b720-3671642ef457)
+
 ## Installation 
 
 **Installation**
