@@ -140,6 +140,12 @@ def lambda_handler(event, context):
         except:
             streaming = False
 
+        if streaming == True:
+            return {
+                "statusCode": 401,
+                "body": "Streaming is not supported in this version of the API. Please set 'stream' to 'false'."
+            }
+
         # Add system message
         messages = add_system_message(messages, functions)
 
@@ -213,10 +219,10 @@ def lambda_handler(event, context):
 
 
             message["content"] = message["content"].replace("<message>\n", "").replace("<message>", "")
-            message["content"] = message["content"].replace("</message>\n", "").replace("</message>", "")
+            message["content"] = message["content"].replace("\n</message>", "").replace("</message>", "")
 
             message["content"] = message["content"].replace("<thought>\n", "*").replace("<thought>", "*")
-            message["content"] = message["content"].replace("</thought>\n", "*").replace("</thought>", "*")
+            message["content"] = message["content"].replace("\n</thought>", "*").replace("</thought>", "*")
 
             # Find tool calls using regex
             tool_call_xml = re.search(r'(<tool_call>)[\s\S]*(<\/tool_call>)', completion.choices[0].message.content)
